@@ -1,3 +1,5 @@
+!*customization: -color
+xterm*termName:  xterm-256color
 xterm*faceName: Dejavu Sans Mono for Powerline
 xterm*faceSize: 9
 !xterm*metaSendsEscape: true

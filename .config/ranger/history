@@ -1,10 +1,3 @@
-open_with okular
-open_with vlc
-delete 
-chmod
-search .con
-search ran
-!touch pito
 ! touch pito
 
 shell touch pito
@@ -32,6 +25,26 @@ shell mkdir otro
 shell otro L
 shell mkdir otro\ L
 shell mkdir muevo
-open_with nano
-delete
 rename config.older
+open_with nano
+rename ander nder
+rename ander
+shell mkdir
+shell mkdir fish
+search .confi
+shell git status
+shell touch 12 34 56 78 90
+open_with l
+shell touch hey.ods
+open_with libreoffice-calc
+filter .png
+find 
+filter png
+filter 
+shell mkdir ander
+shell touch file
+delete trasj
+rename 
+rename file
+filter lo
+delete
