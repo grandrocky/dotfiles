@@ -1,0 +1,37 @@
+open_with okular
+open_with vlc
+delete 
+chmod
+search .con
+search ran
+!touch pito
+! touch pito
+
+shell touch pito
+shell touch otro
+qa
+Q
+q
+shell mkdir pruebas
+shell touch d s f s a d f r d e e
+find co
+find rc
+mkdir 
+cd .gnome2
+open_with -t vim
+rename otros
+rename pitowejeje
+open_with mpd
+open_with mpv
+rename i3
+shell touch uno dos tres
+open_with vim
+shell mkdir .config
+open_with 
+shell mkdir otro
+shell otro L
+shell mkdir otro\ L
+shell mkdir muevo
+open_with nano
+delete
+rename config.older

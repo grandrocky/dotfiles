@@ -1,0 +1,91 @@
+#!/bin/bash
+
+# comprobar si existe el directorio de configuracion y si no crearlo
+# TODO sustituir conf='~/.marcar'
+
+if [[ ! -d ~/.marcar ]]; then
+	mkdir ~/.marcar
+fi
+
+# coge el pwd y le cambia los / por _
+archivo=$(pwd | sed "s/\//_/g")
+
+# crea archivo de marcado
+
+
+existe_archivo(){
+if [[ ! -f ~/.marcar/$archivo ]]; then
+	touch ~/.marcar/$archivo
+	ls > ~/.marcar/$archivo
+fi
+}
+
+mostrar() {
+	existe_archivo
+	marcado=$(cat ~/.marcar/$archivo)
+	echo -e $marcado
+}
+
+
+#B='\e[1;38;5;33m'
+#LB='\e[1;38;5;81m'
+#GY='\e[1;38;5;242m'
+#G='\e[1;38;5;82m'
+#P='\e[1;38;5;161m'
+#PP='\e[1;38;5;93m'
+#R='\e[1;38;5;196m'
+#Y='\e[1;38;5;214m'
+#W='\e[0m'
+
+existe_archivo
+# color normal
+color_normal='\\e[0m'
+
+
+
+if [[ -n "$1" ]]; then
+	# TODO sustituir la / por nada por si alguien pone el nombre de la carpeta mal
+	if [[ -n "$2" ]]; then
+		#asignar colores
+		case $2 in
+		    b)  color='\\e[1;38;5;33m' ;;
+			lb) color='\\e[1;38;5;81m' ;;
+			gy) color='\\e[1;38;5;242m';;
+			g)  color='\\e[1;38;5;82m' ;;
+			p)  color='\\e[1;38;5;161m';;
+			pp) color='\\e[1;38;5;93m' ;;
+			r)  color='\\e[1;38;5;196m';;
+			y)  color='\\e[1;38;5;214m';;
+			w)  color='\\e[0m'  
+				sed -i "s/.*$1.*/$1/" ~/.marcar/$archivo
+				color=false
+				mostrar
+			    ;;
+		    *)  echo 'Color no valido'; color=false ;; 
+		esac
+
+		if [[ "$color" != false ]]; then
+			sed -i "s/.*$1.*/$color$1$color_normal/" ~/.marcar/$archivo
+			mostrar
+		fi
+		
+	else
+		echo "Especifica un color"
+	fi
+else
+	mostrar
+fi
+
+
+
+
+
+#	TODO comprobar si ya tiene algun color si lo tiene reemplazarlo quitarlo... etc sed?
+#	comprobar si han cambiado los archivos desde la ultima vez
+# merge?
+
+# readline? comparar un archivo cambiado por un ls??
+# ls en un archivo temporal, comparamos con nuestro archivo los nombres+color 
+# y al q sea igual se le cambia el color
+# sed s substituir d eliminar habra uno de mostrar o de pasar el valor a una variable?
+# grep?
