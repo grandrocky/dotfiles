@@ -94,6 +94,8 @@ bindsym $mod+a focus parent
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Control+ntilde workspace next
+bindsym $mod+Control+j workspace prev
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
