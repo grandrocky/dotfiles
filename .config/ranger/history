@@ -1,4 +1,3 @@
-
 shell touch pito
 shell touch otro
 qa
@@ -48,3 +47,4 @@ filter lo
 delete
 filter vi
 filter 
+rename screenshot.png
