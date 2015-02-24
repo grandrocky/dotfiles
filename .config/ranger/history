@@ -1,50 +1,50 @@
-mkdir 
-cd .gnome2
-open_with -t vim
-rename otros
-rename pitowejeje
-open_with mpd
-rename i3
-shell touch uno dos tres
+shell mkdir Blog
+shell mkdir Twitter
+shell mkdir MEGAsync
+shell mkdir Trabajo
+shell mkdir Facturas
+shell mkdir Recursos
+rename Imágenes
+shell mkdir IDD
+shell mkdir Juegos
+shell mkdir PSP
+shell mkdir NDS
+shell mkdir GBA
+shell mkdir Libros
+rename Pruebas
+find ht
+open_with haroopad f
+shell convert haze-os-kingsoft-office.png haze-os-kingsoft-office.jpg
+shell convert haze-os-gnome.png haze-os-gnome.jpg
+shell atool -x capturaspost.zip
+rename juegos-para-hacerte-rabiar.jpg
+rename formatos-de-documento-abiertos.jpg
+rename Otros
+shell atool -x 177811.zip
+open_with firefox
+shell kl
 open_with vim
-shell mkdir .config
-open_with 
-shell mkdir otro
-shell otro L
-shell mkdir otro\ L
-shell mkdir muevo
-rename config.older
-open_with nano
-rename ander nder
-rename ander
-shell mkdir
-shell mkdir fish
-search .confi
-shell git status
-shell touch 12 34 56 78 90
-open_with l
-shell touch hey.ods
-open_with libreoffice-calc
-filter .png
-find 
-filter png
-shell mkdir ander
-shell touch file
-delete trasj
+open_with inkscape
 rename 
-rename file
-filter lo
-filter vi
-rename screenshot.png
-
-open_with feh
-open_with 11
-shell convert temas-para-plank.png temas-para-plank.jpg
-open_with mpv
-filter jpg|png|gif
-filter 
-delete
+rename que-animes-ver.jpg
+rename gamificar-la-educación.jpg
+shell atool -x breach-v0.3.22-alpha.6-linux-x64.tar.gz
+shell 
+open_with 
+filter .md
+shell unmark
+open_with k
+shell mkdir trabajo
+rename themes
+shell mkdir Iker
 open_with vlc
-open_with vlc f
-shell cp %
-shell touch aaa
+rename death-note-light-yagami.jpg
+rename death-note.jpg
+rename elegir-lenguaje-de-programacion.jpg
+shell convert windows-7-actualizando.png windows-7-actualizando.jpg
+filter 
+search icon
+search micro
+search mail-send
+search_inc mail-send
+search mail
