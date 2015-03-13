@@ -1,4 +1,3 @@
-filter 
 search micro
 search mail-send
 search_inc mail-send
@@ -48,3 +47,4 @@ open_with vlc f
 filter deskjet
 search 2540
 open_with 
+search compto
