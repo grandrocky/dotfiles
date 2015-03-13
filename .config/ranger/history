@@ -1,50 +1,50 @@
-shell mkdir Blog
-shell mkdir Twitter
-shell mkdir MEGAsync
-shell mkdir Trabajo
-shell mkdir Facturas
-shell mkdir Recursos
-rename Imágenes
-shell mkdir IDD
-shell mkdir Juegos
-shell mkdir PSP
-shell mkdir NDS
-shell mkdir GBA
-shell mkdir Libros
-rename Pruebas
-find ht
-open_with haroopad f
-shell convert haze-os-kingsoft-office.png haze-os-kingsoft-office.jpg
-shell convert haze-os-gnome.png haze-os-gnome.jpg
-shell atool -x capturaspost.zip
-rename juegos-para-hacerte-rabiar.jpg
-rename formatos-de-documento-abiertos.jpg
-rename Otros
-shell atool -x 177811.zip
-open_with firefox
-shell kl
-open_with vim
-open_with inkscape
-rename 
-rename que-animes-ver.jpg
-rename gamificar-la-educación.jpg
-shell atool -x breach-v0.3.22-alpha.6-linux-x64.tar.gz
-shell 
-open_with 
-filter .md
-shell unmark
-open_with k
-shell mkdir trabajo
-rename themes
-shell mkdir Iker
-open_with vlc
-rename death-note-light-yagami.jpg
-rename death-note.jpg
-rename elegir-lenguaje-de-programacion.jpg
-shell convert windows-7-actualizando.png windows-7-actualizando.jpg
 filter 
-search icon
 search micro
 search mail-send
 search_inc mail-send
 search mail
+shell atool -x appdietetica-firefoxOS-master.zip
+open_with firefox
+shell atool -x appdietetica-2.0.zip
+rename index.html
+open_with nano
+open_with vlc
+open_with vlc -f
+open_with vlc -d
+shell mkdir appdietetica-gtk
+rename python
+rename 
+rename donea.txt
+rename done.txt
+shell mkdir deporte
+shell mkdir progresos
+shell mkdir 2015-03
+shell atool -x Photos.zip 
+shell mkdir programas
+rename Programas
+search key
+shell mkdir Documentos
+shell mkdir Imágenes
+shell mkdir Utilidades
+rename Imágenes
+rename Imágenesa
+rename Juegosa
+rename Vídeosa
+shell mkdir Vídeos
+shell mkdir Música
+shell mkdir Plantillas
+search dsc
+rename Deporte
+search icon
+search appl
+search icons
+rename synapse.jpg
+rename gnome-do.jpg
+filter pdf
+open_with mpv f
+rename tor-en-android.jpg
+rename kuroshitsuji.jpg
+open_with vlc f
+filter deskjet
+search 2540
+open_with 

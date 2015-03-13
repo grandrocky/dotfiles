@@ -191,7 +191,7 @@ set hlsearch        " resaltar resultados de busqueda
 set nrformats=      " tratar a todos los numeros como decimales
 " set cursorline    " highlight current line
 
-let mapleader=","
+let mapleader="\<Space>"
 
 " teclas de direccion como en el teclado español
 nnoremap j h
