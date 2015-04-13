@@ -5,7 +5,7 @@ ZSH=/usr/share/oh-my-zsh/
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ander-agnoster"
+ZSH_THEME="nicoulaj"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,7 +45,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux taskwarrior zsh-syntax-highlighting)
+plugins=(git archlinux taskwarrior autojump zsh-syntax-highlighting)
 
 # User configuration
 
@@ -65,7 +65,8 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 export EDITOR='vim'
-
+export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=screen-256color
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -82,6 +83,7 @@ export EDITOR='vim'
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias fishconfig="vim ~/.config/fish/config.fish"
+alias i3config="vim ~/.config/i3/config"
 # ubuntu aliases
 # alias AddRepo="sudo add-apt-repository -y"
 # alias RemoveRepo="sudo add-apt-repository --remove"
@@ -99,4 +101,5 @@ alias :q="exit"
 alias pacman="sudo pacman"
 alias xresconfig="vim ~/.Xresources"
 alias xresup="xrdb ~/.Xresources"
-alias Actualizar="packer -Syu --noconfirm --noedit"
+alias Actualizar="packer -Sygu --nocgonfirm --noedit"
+alias SteamArreglar='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'

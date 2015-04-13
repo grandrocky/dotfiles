@@ -28,26 +28,27 @@ font pango:Terminess Powerline 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 # bindsym $mod+Return exec gnome-terminal
 # bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Control+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run
+# bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Terminess Powerline-8' -l 20"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ntilde focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -56,10 +57,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -68,7 +69,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -97,32 +98,32 @@ bindsym $mod+a focus parent
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Control+ntilde workspace next
-bindsym $mod+Control+j workspace prev
+bindsym $mod+Control+l workspace next
+bindsym $mod+Control+h workspace prev
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace 1:一
+bindsym $mod+2 workspace 2:二
+bindsym $mod+3 workspace 3:三
+bindsym $mod+4 workspace 4:四
+bindsym $mod+5 workspace 5:五
+bindsym $mod+6 workspace 6:六
+bindsym $mod+7 workspace 7:七
+bindsym $mod+8 workspace 8:八
+bindsym $mod+9 workspace 9:九
+bindsym $mod+0 workspace 10:十
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 1:一
+bindsym $mod+Shift+2 move container to workspace 2:二
+bindsym $mod+Shift+3 move container to workspace 3:三
+bindsym $mod+Shift+4 move container to workspace 4:四
+bindsym $mod+Shift+5 move container to workspace 5:五
+bindsym $mod+Shift+6 move container to workspace 6:六
+bindsym $mod+Shift+7 move container to workspace 7:七
+bindsym $mod+Shift+8 move container to workspace 8:八
+bindsym $mod+Shift+9 move container to workspace 9:九
+bindsym $mod+Shift+0 move container to workspace 10:十
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -139,10 +140,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -157,6 +158,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+
+set $mode_kb Keyboard layout: (e) es, (d) es -dvorak
+
+bindsym $mod+Control+k mode "$mode_kb"
+
+mode "$mode_kb" {
+        bindsym e      exec --no-startup-id setxkbmap es
+        bindsym d      exec --no-startup-id setxkbmap es -variant dvorak
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
 ### i3 gaps {{{
 # gaps inner|outer current|all set|plus|minus <px>
 
@@ -167,9 +181,10 @@ bindsym $mod+r mode "resize"
 #smart_borders on|no_gaps
 # smart_borders on
 gaps inner 10
-gaps outer 5
+# gaps outer 5
 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
+
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -226,16 +241,17 @@ bar {
         #         # inactive_workspace #333333 #222222 #888888
         #         # urgent_workspace   #2f343a #900000 #ffffff
 
-                  background #1C1C1C
-        #         statusline #ffffff
-        #         separator #666666
+                  background #262626
+                statusline #DDEEDD
+                separator #66AABB
 
-                # focused_workspace  #bda200 #ffd700 #000000
+                 focused_workspace  #BDE077 #BDE077 #000000
         #         active_workspace   #333333 #5f676a #ffffff
         #         inactive_workspace #333333 #222222 #888888
-        #         urgent_workspace   #2f343a #900000 #ffffff
+                urgent_workspace   #2f343a #FFE863 #000000
         }
         # font pango:Dejavu Sans Mono 8
+        # strip_workspace_numbers yes
 }
 
 # Mykeybindings {{
@@ -246,9 +262,10 @@ bar {
 # client.unfocused        #333333 #222222 #888888 #292d2e
 # client.urgent           #2f343a #900000 #ffffff #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000
-# client.focused          #bda200 #ffd700 #000000 #2e9ef4
+
+client.focused          #BDE077 #BDE077 #000000 #262626
 # client.focused_inactive #333333 #5f676a #ffffff #484e50
-# client.unfocused        #333333 #222222 #888888 #292d2e
+client.unfocused        #333333 #111111 #888888 #292d2e
 # client.urgent           #2f343a #900000 #ffffff #900000
 # client.placeholder      #ffd700 #0c0c0c #ffffff #000000
 # Toggle between dock mode and hide mode
@@ -265,19 +282,15 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 7%+
 bindsym XF86AudioLowerVolume exec amixer set Master 7%-
 bindsym XF86AudioMute exec amixer set Master toggle
 
-# Adjust Brightness
-bindsym $mod+Control+Up exec light -A 1
-bindsym $mod+Control+Down exec light -U 1
-bindsym $mod+Control+Shift+Up exec light -A 5
-bindsym $mod+Control+Shift+Down exec light -U 5
-
 # Screen Capture | dependencies: shutter
-bindsym Print exec shutter -f
-bindsym Shift+Print exec shutter -s 
+bindsym Print exec --no-startup-id  shutter -f
+bindsym Shift+Print exec --no-startup-id shutter -s
 
 # Brightness | dependencies: light-git
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -Ur 1
+bindsym XF86MonBrightnessUp exec light -Ar 1
+bindsym $mod+Control+Up exec light -Ar 1
+bindsym $mod+Control+Down exec light -Ur 1
 
 # Change border
 bindsym $mod+t border normal
@@ -285,30 +298,40 @@ bindsym $mod+y border 1pixel
 bindsym $mod+u border none
 
 # lock screen
-bindsym $mod+Control+l exec i3lock -c 000000
+bindsym $mod+Control+Shift+l exec i3lock -c 000000
 
 # }} Mykeybindings
 
 # {{ Startup programs
-
-exec --no-startup-id setxkbmap es
-exec --no-startup-id setxkbmap -option caps:escape # cambiar mayus por escape
-exec --no-startup-id start-pulseaudio-x11 &
-exec --no-startup-id ~/scripts/doublemonitor.sh & # if VGA monitor, put left
+exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id nitrogen --restore &
-exec --no-startup-id /usr/lib/kde4/libexec/polkit-kde-authentication-agent-1
+# exec --no-startup-id setxkbmap es -variant dvorak
+exec --no-startup-id setxkbmap es
+# exec --no-startup-id setxkbmap -option caps:escape # cambiar mayus por escape
+exec --no-startup-id start-pulseaudio-x11 &
+# exec --no-startup-id ~/scripts/doublemonitor.sh & # if VGA monitor, put left
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id dunst
 exec --no-startup-id udiskie &
 exec --no-startup-id indicator-kdeconnect &
-#exec --no-startup-id octopi-notifier
-exec --no-startup-id megasync
+exec --no-startup-id octopi-notifier &
+exec --no-startup-id megasync &
 exec --no-startup-id dropbox &
 exec --no-startup-id nm-applet &
-exec --no-startup-id caffeine
-exec --no-startup-id klipper
+# exec --no-startup-id caffeine
+# exec --no-startup-id klipper
 #exec --no-startup-id kmix
 exec --no-startup-id volumeicon &
 exec --no-startup-id xfce4-power-manager &
-exec --no-startup-id octopi-notifier &
-# exec --no-startup-id compton &
+# exec --no-startup-id compton -c -f &
+exec --no-startup-id compton &
 # }} Startup programs
+
+
+# Window class {{{
+
+for_window [class="Guake"] floating enable
+for_window [class="Xfce4-notifyd"] floating enable
+
+
+# }}}

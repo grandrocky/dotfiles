@@ -1,50 +1,41 @@
-search micro
-search mail-send
-search_inc mail-send
-search mail
-shell atool -x appdietetica-firefoxOS-master.zip
-open_with firefox
-shell atool -x appdietetica-2.0.zip
-rename index.html
-open_with nano
-open_with vlc
-open_with vlc -f
-open_with vlc -d
-shell mkdir appdietetica-gtk
-rename python
-rename 
-rename donea.txt
-rename done.txt
-shell mkdir deporte
-shell mkdir progresos
-shell mkdir 2015-03
-shell atool -x Photos.zip 
-shell mkdir programas
-rename Programas
-search key
-shell mkdir Documentos
-shell mkdir Imágenes
-shell mkdir Utilidades
+rename .bashrc
+rename gtk-2.0
+rename gtk-3.0
+rename ranger
 rename Imágenes
-rename Imágenesa
-rename Juegosa
-rename Vídeosa
-shell mkdir Vídeos
+rename Música
+rename Vídeos
+shell touch pito
+shell atool -x lightdm-2015-03-17.zip
+search ico
+shell mkdir Syncthing
+shell mkdir Prueba
+shell touch dñf
+shell mkdir Documentos
 shell mkdir Música
-shell mkdir Plantillas
-search dsc
-rename Deporte
-search icon
-search appl
-search icons
-rename synapse.jpg
-rename gnome-do.jpg
-filter pdf
-open_with mpv f
-rename tor-en-android.jpg
-rename kuroshitsuji.jpg
-open_with vlc f
-filter deskjet
-search 2540
+shell mkdir Libros
+shell Yaiza
+shell mkdir Yaiza
+shell mkdir Grabaciones
+open_with cmus
+rename Anime-koro-senseia.md
+search octopi
+shell atool -x Minecraft\ Actualizable\ -\ 1.8.3.zip
+open_with gnome-clocks
+open_with evince
+open_with evince f
+shell atool -x ShiginimaSE_v2000.zip
+rename Shiginima Launcher SE v2.000.jar
+rename minecraft_old.jar
+rename minecraft.jar
+o
+rename kamisama-hajimemashita.jpg
+rename personajes-de-Kamisama-Hajimemashita.jpg
+rename Monster Hunter Freedom Unite.iso
+rename Monster Hunter 3rd HD ver (English Patch).iso
+rename Space Invaders Extreme.cso
+delete
+shell atool -x DeskPoderHabitostop.7z
+shell atool -x Desktop.7z
+shell atool -x Nueva\ carpeta.rar
 open_with 
-search compto

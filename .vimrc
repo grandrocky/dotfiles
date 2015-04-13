@@ -34,12 +34,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'python.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-let g:nerdtree_tabs_open_on_console_startup = 1
-" Una barra de stado muy chula
+" let g:nerdtree_tabs_open_on_console_startup = 1
 Plugin 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'badwolf'
 set laststatus=2
 Plugin 'edkolev/tmuxline.vim' " set airline colors to tmux
 " Plugin 'Lokaltog/powerline'
@@ -60,21 +58,19 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Color schemes
-" set t_Co=256
-" let g:solarized_termcolors=256
 Plugin 'altercation/vim-colors-solarized'
-" set background=dark
-" colorscheme solarized
 Plugin 'sickill/vim-monokai'
-colorscheme monokai
-" colorscheme bubblegum
 Plugin 'baskerville/bubblegum'
-" activar resaltado
-syntax enable
+Plugin '29decibel/codeschool-vim-theme'
+
 Plugin 'tomasr/molokai'
 " let g:molokai_original = 1
 " let g:rehash256 = 1
-" colorscheme molokai
+
+Plugin 'lilydjwg/colorizer'
+Plugin 'suan/vim-instant-markdown' " markdown preview [sudo] npm -g install instant-markdown-d
+let g:instant_markdown_autostart = 0 " dont start preview
+Plugin 'nelstrom/vim-markdown-folding' " collapse titles
 Plugin 'vim-scripts/TaskList.vim' " muestra todos los todo
 Plugin 'tpope/vim-commentary'     " hace comentarios
 Plugin 'scrooloose/syntastic'     " muestra errores de syntaxis
@@ -82,10 +78,13 @@ Plugin 'tpope/vim-fugitive'       " git plugin
 Plugin 'mattn/emmet-vim'          " emmet solo para esos lenguajes
 let g:user_emmet_install_global = 0
 autocmd FileType html,php,css EmmetInstall
+"para que funcionen los snippets
 Plugin 'marcweber/vim-addon-mw-utils' " necesario para que funcione el otro
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+
+Plugin 'beloglazov/vim-online-thesaurus' " synonyms
 Plugin 'terryma/vim-multiple-cursors' " multiple cursors
 Plugin 'tpope/vim-surround'           " S para surround rodear algo con comillas
 Plugin 'Lokaltog/vim-easymotion'      " moverse facil por el documento
@@ -97,6 +96,7 @@ let g:neocomplcache_enable_at_startup = 1
 " <TAB>: completion.
 " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 Plugin 'Yggdroot/indentLine'  " show indentation guides
+let g:indentLine_leadingSpaceEnabled = 1
 Plugin 'vim-scripts/CSApprox' " gvim-only colorschemes work in terminal
 Plugin 'godlygeek/tabular'    " alinear verticalmente como una tabla
 Plugin 'sk1418/Join'          " Better join
@@ -143,6 +143,10 @@ endif
 if has("gui_running")
     colorscheme solarized
     let g:airline_theme = "solarized"
+else
+    colorscheme bubblegum-256-dark
+    " colorscheme monokai
+    let g:airline_theme = "bubblegum"
 endif
 
 " If using a dark background within the editing area and syntax highlighting
@@ -193,28 +197,11 @@ set nrformats=      " tratar a todos los numeros como decimales
 
 let mapleader="\<Space>"
 
-" teclas de direccion como en el teclado español
-nnoremap j h
-nnoremap k j
-nnoremap l k
-nnoremap ñ l
-nnoremap <C-w>j <C-w>h
-nnoremap <C-w>k <C-w>j
-nnoremap <C-w>l <C-w>k
-nnoremap <C-w>ñ <C-w>l
-nnoremap <C-w>J <C-w>H
-nnoremap <C-w>K <C-w>J
-nnoremap <C-w>L <C-w>K
-nnoremap <C-w>Ñ <C-w>L
-nnoremap k gj
-nnoremap l gk
-vnoremap j h
-vnoremap k j
-vnoremap l k
-vnoremap ñ l
-
 " repetir comando
 map g. @:
+
+" guardar como sudo
+cmap sudow w !sudo tee %
 
 " let &colorcolumn=join(range(121,999),",") " colorear a partir de 80
 " quitar el resaltado de la ultima busqueda
@@ -226,8 +213,12 @@ if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
 endif
 
+
 " reconode los archivod .md como markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.md set spell spelllang=es
+autocmd BufNewFile,BufReadPost *.md vmap <C-b> <Esc>a**<Esc>gvo<Esc>i**<Esc>t*
+autocmd BufNewFile,BufReadPost *.md vmap <C-i> <Esc>a*<Esc>gvo<Esc>i*<Esc>t*
 
 set wildmenu        " tab completion zsh like
 set wildmode=full
@@ -238,4 +229,4 @@ set noswapfile
 set splitbelow
 set splitright
 runtime macros/matchit.vim " plugin de vim que habilita saltos, ej html tag
-set t_ut= " para que los colores del background funcionen bien en tmux
+" set t_ut= " para que los colores del background funcionen bien en tmux
