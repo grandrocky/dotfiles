@@ -100,6 +100,7 @@ let g:indentLine_leadingSpaceEnabled = 1
 Plugin 'vim-scripts/CSApprox' " gvim-only colorschemes work in terminal
 Plugin 'godlygeek/tabular'    " alinear verticalmente como una tabla
 Plugin 'sk1418/Join'          " Better join
+Plugin 'freitass/todo.txt-vim' " Organizar los todotxt
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -195,7 +196,7 @@ set hlsearch        " resaltar resultados de busqueda
 set nrformats=      " tratar a todos los numeros como decimales
 " set cursorline    " highlight current line
 
-let mapleader="\<Space>"
+" let mapleader="\<Space>"
 
 " repetir comando
 map g. @:
@@ -217,8 +218,9 @@ endif
 " reconode los archivod .md como markdown
 " autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.md set spell spelllang=es
-autocmd BufNewFile,BufReadPost *.md vmap <C-b> <Esc>a**<Esc>gvo<Esc>i**<Esc>t*
-autocmd BufNewFile,BufReadPost *.md vmap <C-i> <Esc>a*<Esc>gvo<Esc>i*<Esc>t*
+autocmd BufNewFile,BufReadPost *.md vmap <Leader>b <Esc>a**<Esc>gvo<Esc>i**<Esc>t*
+autocmd BufNewFile,BufReadPost *.md vmap <Leader>i <Esc>a*<Esc>gvo<Esc>i*<Esc>t*
+autocmd BufNewFile,BufReadPost *.md vmap <Leader>l <Esc>a](<Esc>"+pa)<Esc>gvo<Esc>i[<Esc>f)
 
 set wildmenu        " tab completion zsh like
 set wildmode=full

@@ -73,6 +73,8 @@ export TERM=xterm-256color
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+export GPGKEY=7D9D16BE
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -80,10 +82,11 @@ export TERM=xterm-256color
 #
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
-alias fishconfig="vim ~/.config/fish/config.fish"
-alias i3config="vim ~/.config/i3/config"
+alias zshconfig="$EDITOR ~/.zshrc"
+alias vimconfig="$EDITOR ~/.vimrc"
+alias fishconfig="$EDITOR ~/.config/fish/config.fish"
+alias i3config="$EDITOR ~/.config/i3/config"
+alias rangerconfig="$EDITOR ~/.config/ranger/rc.conf"
 # ubuntu aliases
 # alias AddRepo="sudo add-apt-repository -y"
 # alias RemoveRepo="sudo add-apt-repository --remove"
@@ -99,7 +102,12 @@ alias :q="exit"
 # alias ServerUp="sudo /opt/lampp/lampp start"
 # alias ServerDown="sudo /opt/lampp/lampp stop"
 alias pacman="sudo pacman"
-alias xresconfig="vim ~/.Xresources"
+alias xresconfig="$EDITOR ~/.Xresources"
 alias xresup="xrdb ~/.Xresources"
 alias Actualizar="packer -Sygu --nocgonfirm --noedit"
 alias SteamArreglar='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
+# alias fuck="$(thefuck $(fc -ln -1))"
+alias linda="echo YaizaNovia"
+
+alias da="dt -a"
+compctl -k "($(cat ~/.config/dt/db.csv | cut -d "|" -f 2 | sed 's/ \+/\-/g' | sed 's/,/;/g' | sed 's/(/\\(/g' | sed 's/)/\\)/g'))" dt

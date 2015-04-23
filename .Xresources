@@ -20,8 +20,8 @@ Xft.hintstyle:  hintfull
 !URxvt.font: xft:Dejavu Sans Mono for Powerline:size=9
 URxvt.font: xft:Terminess Powerline:size=11
 URxvt.scrollBar: false
-!URxvt.transparent:   true
-!URxvt.shading:       20
+URxvt.transparent:   true
+URxvt.shading:       20
 !URxvt.buffered: false
 
 

@@ -298,7 +298,8 @@ bindsym $mod+y border 1pixel
 bindsym $mod+u border none
 
 # lock screen
-bindsym $mod+Control+Shift+l exec i3lock -c 000000
+# bindsym $mod+Control+Shift+l exec i3lock -c 000000
+bindsym $mod+Control+Shift+l exec --no-startup-id $HOME/scripts/lock.sh
 
 # }} Mykeybindings
 
@@ -311,8 +312,8 @@ exec --no-startup-id setxkbmap es
 exec --no-startup-id start-pulseaudio-x11 &
 # exec --no-startup-id ~/scripts/doublemonitor.sh & # if VGA monitor, put left
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id dunst
-exec --no-startup-id udiskie &
+# exec --no-startup-id dunst
+# exec --no-startup-id udiskie &
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id octopi-notifier &
 exec --no-startup-id megasync &

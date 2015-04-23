@@ -1,20 +1,3 @@
-rename .bashrc
-rename gtk-2.0
-rename gtk-3.0
-rename ranger
-rename Imágenes
-rename Música
-rename Vídeos
-shell touch pito
-shell atool -x lightdm-2015-03-17.zip
-search ico
-shell mkdir Syncthing
-shell mkdir Prueba
-shell touch dñf
-shell mkdir Documentos
-shell mkdir Música
-shell mkdir Libros
-shell Yaiza
 shell mkdir Yaiza
 shell mkdir Grabaciones
 open_with cmus
@@ -34,8 +17,34 @@ rename personajes-de-Kamisama-Hajimemashita.jpg
 rename Monster Hunter Freedom Unite.iso
 rename Monster Hunter 3rd HD ver (English Patch).iso
 rename Space Invaders Extreme.cso
-delete
 shell atool -x DeskPoderHabitostop.7z
 shell atool -x Desktop.7z
 shell atool -x Nueva\ carpeta.rar
 open_with 
+linemode 
+
+shell atool -x David\ Deida\ -\ The\ Way\ of\ The\ Superior\ Man\ \(Recommended\ by\ David\ DeAngelo\).zip
+shell mkdir prueba
+shell touch a
+shell touch x
+shell touch b
+shell atool -x $@
+shell atool -x "$@"
+shell atool -x %f
+shell atool -x %s
+shell atool -x %s &
+rename .mutt
+search mutt
+search 
+shell echo %f | sed 's/\(.*\.\)jpg/\1html/'
+shell m
+shell chmod +x lock.sh
+delete 
+rename mkdatedir.sh
+open_with vlc f
+rename db.csv
+delete
+shell mkdir markdown
+rename articulos
+rename artículos
+rename dtrc.bak
