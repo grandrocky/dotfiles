@@ -101,6 +101,7 @@ Plugin 'vim-scripts/CSApprox' " gvim-only colorschemes work in terminal
 Plugin 'godlygeek/tabular'    " alinear verticalmente como una tabla
 Plugin 'sk1418/Join'          " Better join
 Plugin 'freitass/todo.txt-vim' " Organizar los todotxt
+Plugin 'zefei/vim-colortuner' " colorscheme tuner
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

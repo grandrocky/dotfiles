@@ -187,11 +187,11 @@ function new_line() {
 is_debug_mode
 check_files
 
-while getopts "dtraiwh" opt; do
+while getopts "dtraiwhm" opt; do
     # TODO mirar lo de las :
     case "$opt" in
         # TODO paciente lista de pacientes y dietao
-        d) 
+        d)
             PS3="Select day : "
             select opt in "${week_days[@]}"; do
                 if [ "$opt" = "$quit_string" ]; then
@@ -210,7 +210,6 @@ while getopts "dtraiwh" opt; do
             sed -i "s/^\(usr_hour=\).*/\1\""$new_hour"\"/" "$config_file"
         ;;
         r)
-            # for 
             if [[ -z "$2" ]]; then
                 #statements
                 show_day_plan
@@ -261,6 +260,31 @@ while getopts "dtraiwh" opt; do
             echo "CHANGE MEAL TIME: dt -t 08:00"
             echo "CHANGE MEAL DAY: dt -d"
             echo "DELETE FOOD ENTRY: dt -r {id}"
+        ;;
+        m)
+            # Calcular metabolismo basal
+            # TODO multilenguaje
+            if [[ -n "$2" ]]; then
+                masa_muscular=$2
+                else
+                read -p "Masa muscular (kg) : " masa_muscular
+                fi
+            metabolismoBasal=$( echo "scale=2; 370+(21.6*$masa_muscular)" | bc -l )
+
+            # Calcular metabolismo total
+            # TODO is a number?
+            if [[ -n "$3" ]]; then
+                nivel_actividad=$3
+            else
+                read -p "Nivel de actividad : " nivel_actividad
+            fi
+            metabolismoTotal=$( echo "scale=2; $metabolismoBasal*$nivel_actividad" | bc -l )
+
+            #Mostrar resultados
+            echo -e "┌METABOLISMO [$masa_muscular kg] [$nivel_actividad actividad]"
+            echo -e "├─Metabolismo basal → "$metabolismoBasal" kcal"
+            echo -e "└─Metabolismo total → "$metabolismoTotal" kcal"
+            exit 0
         ;;
         \?)
             echo "Invalid option: -$OPTARG"

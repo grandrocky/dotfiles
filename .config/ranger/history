@@ -1,15 +1,3 @@
-shell mkdir Yaiza
-shell mkdir Grabaciones
-open_with cmus
-rename Anime-koro-senseia.md
-search octopi
-shell atool -x Minecraft\ Actualizable\ -\ 1.8.3.zip
-open_with gnome-clocks
-open_with evince
-open_with evince f
-shell atool -x ShiginimaSE_v2000.zip
-rename Shiginima Launcher SE v2.000.jar
-rename minecraft_old.jar
 rename minecraft.jar
 o
 rename kamisama-hajimemashita.jpg
@@ -20,7 +8,6 @@ rename Space Invaders Extreme.cso
 shell atool -x DeskPoderHabitostop.7z
 shell atool -x Desktop.7z
 shell atool -x Nueva\ carpeta.rar
-open_with 
 linemode 
 
 shell atool -x David\ Deida\ -\ The\ Way\ of\ The\ Superior\ Man\ \(Recommended\ by\ David\ DeAngelo\).zip
@@ -41,10 +28,23 @@ shell m
 shell chmod +x lock.sh
 delete 
 rename mkdatedir.sh
-open_with vlc f
 rename db.csv
-delete
 shell mkdir markdown
 rename articulos
 rename artículos
 rename dtrc.bak
+shell mkdir .config
+shell mkdir pito
+shell touch pito.txt
+shell 
+rename Yaiza2
+shell mkdir Yaiza
+delete
+rename todo2.txt
+rename todo3.txt
+shell todotx
+open_with todotxt-machine
+open_with 
+open_with vim
+shell mkdir .minecraft
+open_with vlc f

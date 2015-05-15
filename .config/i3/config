@@ -180,7 +180,7 @@ mode "$mode_kb" {
 
 #smart_borders on|no_gaps
 # smart_borders on
-gaps inner 10
+# gaps inner 10
 # gaps outer 5
 
 for_window [class="^.*"] border pixel 1
