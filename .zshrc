@@ -112,3 +112,14 @@ alias linda="echo YaizaNovia"
 alias da="dt -a"
 compctl -k "($(cat ~/.config/dt/db.csv | cut -d "|" -f 2 | sed 's/ \+/\-/g' | sed 's/,/;/g' | sed 's/(/\\(/g' | sed 's/)/\\)/g'))" dt
 alias damemucks="./Documentos/Syncthing/Yaiza/scripts/damemucks | lolcat"
+
+bindkey -v
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+export KEYTIMEOUT=1

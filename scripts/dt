@@ -260,6 +260,7 @@ while getopts "dtraiwhm" opt; do
             echo "CHANGE MEAL TIME: dt -t 08:00"
             echo "CHANGE MEAL DAY: dt -d"
             echo "DELETE FOOD ENTRY: dt -r {id}"
+            echo "CALCULATE METABOLISM: dt -m {muscle mass} {activity}"
         ;;
         m)
             # Calcular metabolismo basal

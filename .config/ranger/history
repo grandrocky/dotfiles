@@ -1,50 +1,50 @@
-rename minecraft.jar
-o
-rename kamisama-hajimemashita.jpg
-rename personajes-de-Kamisama-Hajimemashita.jpg
-rename Monster Hunter Freedom Unite.iso
-rename Monster Hunter 3rd HD ver (English Patch).iso
-rename Space Invaders Extreme.cso
-shell atool -x DeskPoderHabitostop.7z
-shell atool -x Desktop.7z
-shell atool -x Nueva\ carpeta.rar
-linemode 
-
-shell atool -x David\ Deida\ -\ The\ Way\ of\ The\ Superior\ Man\ \(Recommended\ by\ David\ DeAngelo\).zip
-shell mkdir prueba
-shell touch a
-shell touch x
-shell touch b
-shell atool -x $@
-shell atool -x "$@"
-shell atool -x %f
-shell atool -x %s
-shell atool -x %s &
-rename .mutt
-search mutt
-search 
-shell echo %f | sed 's/\(.*\.\)jpg/\1html/'
-shell m
-shell chmod +x lock.sh
-delete 
-rename mkdatedir.sh
-rename db.csv
-shell mkdir markdown
-rename articulos
-rename artículos
-rename dtrc.bak
-shell mkdir .config
-shell mkdir pito
-shell touch pito.txt
-shell 
-rename Yaiza2
 shell mkdir Yaiza
-delete
 rename todo2.txt
 rename todo3.txt
 shell todotx
 open_with todotxt-machine
-open_with 
-open_with vim
 shell mkdir .minecraft
+rename Nutrición y deporte2
+rename Anthony Robbins
+rename GalaxyNGC3190_2560x1600.png
+rename GalaxyNGC3190_2560x1600.png_
+rename GalaxyNGC3190_2560x1600ypñy.png
 open_with vlc f
+shell mkdir
+shell mkdir .dunst
+rename dunst
+search duns
+rename dunstrc.prueba
+rename dunstrc.old
+rename dunstrc.oeuoue
+rename -66258358.png
+search con
+search 
+search .con
+rename dunstrc
+rename dunstrc.aa
+shell touch sntrsr
+shell touch sntrsr ntsr daeu dn
+open_with 
+shell mkdir Warcry
+rename Entreno
+open_with vim
+open_with 2
+shell nano diario5
+shell nano diario6
+shell nano diario7
+shell nano diario8
+shell nano diario9
+rename prueba.png
+shell nano intro
+shell mkdir DiarioSecreto
+rename fanfare.m4a
+shell nano textwin
+shell nano
+open_with nano
+rename intro.txt
+shell mkdir vegas
+delete
+shell vim conky-i3bar
+rename hello.py
+open_with vlc

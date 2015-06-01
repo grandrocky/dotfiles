@@ -19,6 +19,7 @@ Xft.hintstyle:  hintfull
 !urxvt*background: rgba:0000/0000/0200/c800
 !URxvt.font: xft:Dejavu Sans Mono for Powerline:size=9
 URxvt.font: xft:Terminess Powerline:size=11
+/* URxvt.font: xft:Droid Sans Mono for Powerline:size=9 */
 URxvt.scrollBar: false
 URxvt.transparent:   true
 URxvt.shading:       20

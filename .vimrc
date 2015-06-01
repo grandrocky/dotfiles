@@ -96,7 +96,7 @@ let g:neocomplcache_enable_at_startup = 1
 " <TAB>: completion.
 " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 Plugin 'Yggdroot/indentLine'  " show indentation guides
-let g:indentLine_leadingSpaceEnabled = 1
+" let g:indentLine_leadingSpaceEnabled = 1
 Plugin 'vim-scripts/CSApprox' " gvim-only colorschemes work in terminal
 Plugin 'godlygeek/tabular'    " alinear verticalmente como una tabla
 Plugin 'sk1418/Join'          " Better join
@@ -143,11 +143,12 @@ endif
 
 " Si hemos abierto Vim en modo GUI
 if has("gui_running")
-    colorscheme solarized
-    let g:airline_theme = "solarized"
+    " colorscheme solarized
+    " let g:airline_theme = "solarized"
+    colorscheme bubblegum-256-dark
+    let g:airline_theme = "bubblegum"
 else
     colorscheme bubblegum-256-dark
-    " colorscheme monokai
     let g:airline_theme = "bubblegum"
 endif
 
@@ -186,6 +187,7 @@ endif
 
 set shell=/bin/bash
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+set guifont=Terminess\ Powerline\ 11
 set number          " show line numbers
 " set tabstop=4      " number of visual spaces per TAB
 " indentation
@@ -233,3 +235,5 @@ set splitbelow
 set splitright
 runtime macros/matchit.vim " plugin de vim que habilita saltos, ej html tag
 " set t_ut= " para que los colores del background funcionen bien en tmux
+set lazyredraw
+set ttyfast

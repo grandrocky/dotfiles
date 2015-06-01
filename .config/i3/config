@@ -34,6 +34,7 @@ bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Control+c kill
+bindsym --whole-window Control+button2 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run
@@ -102,28 +103,28 @@ bindsym $mod+Control+l workspace next
 bindsym $mod+Control+h workspace prev
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
-bindsym $mod+1 workspace 1:一
-bindsym $mod+2 workspace 2:二
-bindsym $mod+3 workspace 3:三
-bindsym $mod+4 workspace 4:四
-bindsym $mod+5 workspace 5:五
-bindsym $mod+6 workspace 6:六
-bindsym $mod+7 workspace 7:七
-bindsym $mod+8 workspace 8:八
-bindsym $mod+9 workspace 9:九
-bindsym $mod+0 workspace 10:十
+bindsym $mod+1 workspace 1:
+bindsym $mod+2 workspace 2:
+bindsym $mod+3 workspace 3:
+bindsym $mod+4 workspace 4:
+bindsym $mod+5 workspace 5:
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1:一
-bindsym $mod+Shift+2 move container to workspace 2:二
-bindsym $mod+Shift+3 move container to workspace 3:三
-bindsym $mod+Shift+4 move container to workspace 4:四
-bindsym $mod+Shift+5 move container to workspace 5:五
-bindsym $mod+Shift+6 move container to workspace 6:六
-bindsym $mod+Shift+7 move container to workspace 7:七
-bindsym $mod+Shift+8 move container to workspace 8:八
-bindsym $mod+Shift+9 move container to workspace 9:九
-bindsym $mod+Shift+0 move container to workspace 10:十
+bindsym $mod+Shift+1 move container to workspace 1:
+bindsym $mod+Shift+2 move container to workspace 2:
+bindsym $mod+Shift+3 move container to workspace 3:
+bindsym $mod+Shift+4 move container to workspace 4:
+bindsym $mod+Shift+5 move container to workspace 5:
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -165,8 +166,8 @@ set $mode_kb Keyboard layout: (e) es, (d) es -dvorak
 bindsym $mod+Control+k mode "$mode_kb"
 
 mode "$mode_kb" {
-        bindsym e      exec --no-startup-id setxkbmap es
-        bindsym d      exec --no-startup-id setxkbmap es -variant dvorak
+        bindsym e      exec --no-startup-id setxkbmap es -option
+        bindsym d      exec --no-startup-id setxkbmap es -variant dvorak -option caps:swapescape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -183,7 +184,7 @@ mode "$mode_kb" {
 # gaps inner 10
 # gaps outer 5
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -224,11 +225,12 @@ mode "$mode_gaps_outer" {
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status -c $HOME/.config/i3/i3status.conf
+        # status_command i3status -c $HOME/.config/i3/i3status.conf
         # height 25
         position top
         # status_command i3status
-        # status_command $HOME/conky-i3bar
+        status_command $HOME/scripts/conky-i3bar
+        font xft:Terminess Powerline, FontAwesome 8
         colors {
         #         # DEFAULTS
         #         # background #000000
@@ -241,14 +243,32 @@ bar {
         #         # inactive_workspace #333333 #222222 #888888
         #         # urgent_workspace   #2f343a #900000 #ffffff
 
-                  background #262626
-                statusline #DDEEDD
-                separator #66AABB
+                # background #262626
+                # statusline #DDEEDD
+                # separator #66AABB
 
-                 focused_workspace  #BDE077 #BDE077 #000000
-        #         active_workspace   #333333 #5f676a #ffffff
-        #         inactive_workspace #333333 #222222 #888888
+                # focused_workspace  #BDE077 #BDE077 #000000
+                # active_workspace   #333333 #5f676a #ffffff
+                # inactive_workspace #333333 #222222 #FFFFFF
+                # urgent_workspace   #2f343a #FFE863 #000000
+                #
+                # focused_workspace  #333333 #222222 #FFFFFF
+                # active_workspace   #333333 #5f676a #66AABB
+                # inactive_workspace #333333 #222222 #66AABB
+                # urgent_workspace   #2f343a #FFE863 #000000
+                #
+                focused_workspace  #000000 #000000 #FFFFFF
+                active_workspace   #000000 #000000 #66AABB
+                inactive_workspace #000000 #000000 #66AABB
                 urgent_workspace   #2f343a #FFE863 #000000
+                # THEME
+                background #00000
+                statusline #2E9AFE
+                separator #00000
+                # focused_workspace #00000 #00000 #2E9AFE
+                # active_workspace #2d2d2d #5f676a #dedede
+                # inactive_workspace #00000 #00000 #0B0B61
+                # urgent_workspace #000000 #000000 #900000
         }
         # font pango:Dejavu Sans Mono 8
         # strip_workspace_numbers yes
@@ -263,7 +283,9 @@ bar {
 # client.urgent           #2f343a #900000 #ffffff #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000
 
-client.focused          #BDE077 #BDE077 #000000 #262626
+client.focused          #66AABB #66AABB #000000 #262626
+# client.focused          #66AABB #66AABB #000000 #262626
+# client.focused          #BDE077 #BDE077 #000000 #262626
 # client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #333333 #111111 #888888 #292d2e
 # client.urgent           #2f343a #900000 #ffffff #900000
@@ -278,61 +300,63 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Volume control
-bindsym XF86AudioRaiseVolume exec amixer set Master 7%+
-bindsym XF86AudioLowerVolume exec amixer set Master 7%-
-bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 7%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 7%-
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 # Screen Capture | dependencies: shutter
 bindsym Print exec --no-startup-id  shutter -f
 bindsym Shift+Print exec --no-startup-id shutter -s
 
 # Brightness | dependencies: light-git
-bindsym XF86MonBrightnessDown exec light -Ur 1
-bindsym XF86MonBrightnessUp exec light -Ar 1
-bindsym $mod+Control+Up exec light -Ar 1
-bindsym $mod+Control+Down exec light -Ur 1
+bindsym XF86MonBrightnessDown exec --no-startup-id light -Ur 1
+bindsym XF86MonBrightnessUp exec --no-startup-id light -Ar 1
+bindsym $mod+Control+Up exec --no-startup-id light -Ar 1
+bindsym $mod+Control+Down exec --no-startup-id light -Ur 1
 
 # Change border
-bindsym $mod+t border normal
-bindsym $mod+y border 1pixel
-bindsym $mod+u border none
+# bindsym $mod+t border normal
+# bindsym $mod+y border 1pixel
+# bindsym $mod+u border none
 
-# lock screen
+# Lock screen
 # bindsym $mod+Control+Shift+l exec i3lock -c 000000
-bindsym $mod+Control+Shift+l exec --no-startup-id $HOME/scripts/lock.sh
+bindsym $mod+Control+Shift+l exec --no-startup-id notify-send "Bloqueando equipo" && $HOME/scripts/lock.sh
+
+# Add note
+bindsym $mod+Control+a exec --no-startup-id $HOME/scripts/addtaskfromclipboard
 
 # }} Mykeybindings
 
 # {{ Startup programs
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id nitrogen --restore &
-# exec --no-startup-id setxkbmap es -variant dvorak
-exec --no-startup-id setxkbmap es
+# exec --no-startup-id setxkbmap es
 # exec --no-startup-id setxkbmap -option caps:escape # cambiar mayus por escape
+exec --no-startup-id setxkbmap es -variant dvorak -option caps:swapescape
 exec --no-startup-id start-pulseaudio-x11 &
 # exec --no-startup-id ~/scripts/doublemonitor.sh & # if VGA monitor, put left
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id dunst
-# exec --no-startup-id udiskie &
+exec --no-startup-id dunst &
+exec --no-startup-id udiskie &
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id octopi-notifier &
 exec --no-startup-id megasync &
 exec --no-startup-id dropbox &
 exec --no-startup-id nm-applet &
 # exec --no-startup-id caffeine
-# exec --no-startup-id klipper
-#exec --no-startup-id kmix
+exec --no-startup-id klipper
+# exec --no-startup-id kmix
 exec --no-startup-id volumeicon &
 exec --no-startup-id xfce4-power-manager &
 # exec --no-startup-id compton -c -f &
-exec --no-startup-id compton &
+exec --no-startup-id compton -c &
 # }} Startup programs
 
 
 # Window class {{{
 
-for_window [class="Guake"] floating enable
-for_window [class="Xfce4-notifyd"] floating enable
-
+# for_window [class="Guake"] floating enable
+# for_window [class="Xfce4-notifyd"] floating enable
 
 # }}}

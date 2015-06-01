@@ -1,0 +1,18 @@
+#!/bin/bash
+
+clipboard=$(xclip -selection clipboard -o)
+adddate=$(date +%F)
+taskfile="${HOME}/Documentos/Dropbox/todo/todo.txt"
+
+szAnswer=$(zenity --entry --text "¿Añadir la siguiente tarea?" --entry-text "$clipboard");
+
+if [[ -z "$szAnswer" ]]; then
+    mplayer /usr/share/sounds/gnome/default/alerts/drip.ogg
+    exit 1
+fi
+
+newtask="${adddate} ${szAnswer}"
+
+echo $newtask >> $taskfile
+
+exit 0
